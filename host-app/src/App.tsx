@@ -1,6 +1,6 @@
-import './App.css';
 import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import './App.scss';
 
 const HomePage = lazy(() => import('remoteHome/HomePage'));
 const ProductsPage = lazy(() => import('remoteProducts/ProductsPage'));
