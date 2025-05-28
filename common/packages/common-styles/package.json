@@ -15,12 +15,15 @@
   },
   "devDependencies": {
     "@types/bun": "latest",
+    "@types/csso": "^5.0.4",
+    "csso": "^5.0.5",
     "sass": "^1.89.0"
   },
   "peerDependencies": {},
   "exports": {
-    ".": "./dist/main.css",
-    "./scss": "./src/scss",
+    ".": "./dist/bundle.css",
+    "./css": "./dist/main.css",
+    "./scss": "./src/scss/main.scss",
     "./package.json": "./package.json"
   },
   "files": [
