@@ -1,0 +1,21 @@
+# bunfig.toml
+[workspace]
+packages = ["packages/*"]
+
+[build]
+target = "esnext"
+minify = false
+define = { "process.env.NODE_ENV" = "\"development\"" }
+outdir = "dist"
+
+#[resolve]
+#alias = { "@my-monorepo/utils" = "./packages/utils" }
+
+[install]
+check = true  # Para asegurarse de que las dependencias estén instaladas antes de compilar
+
+[dev]
+port = 6000
+
+[development]
+server = true  # Si usas un servidor de desarrollo con Bun, habilítalo aquí

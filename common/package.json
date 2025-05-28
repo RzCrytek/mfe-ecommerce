@@ -1,0 +1,22 @@
+{
+  "name": "common",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "workspaces": [
+    "packages/common-styles",
+    "packages/common-images",
+    "packages/common-utils"
+  ],
+  "scripts": {
+    "build": "bun build packages/common-styles && bun build packages/common-images && bun build packages/common-utils",
+    "dev": "bun dev"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
