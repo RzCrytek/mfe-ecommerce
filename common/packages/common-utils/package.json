@@ -1,15 +1,14 @@
 {
   "name": "common-utils",
   "version": "1.0.0",
+  "description": "Librería de utilidades compartidas entre micro frontends",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "type": "module",
   "private": true,
   "scripts": {
-    "dev": "bun dev",
-    "lint": "bun lint",
-    "test": "bun test",
-    "build": "bun build",
-    "build:ts": "bun run build.ts"
+    "build": "bun run build.ts",
+    "dev": "bun x tsc --watch"
   },
   "dependencies": {},
   "devDependencies": {
