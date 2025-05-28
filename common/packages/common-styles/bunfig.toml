@@ -1,0 +1,3 @@
+#[tasks]
+#build = "sass src/scss/main.scss dist/main.css --style=expanded"
+#watch = "sass --watch src/scss/main.scss dist/main.css --style=expanded"
