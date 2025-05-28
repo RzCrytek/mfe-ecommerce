@@ -1,0 +1,37 @@
+{
+  "name": "common-utils",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "private": true,
+  "scripts": {
+    "dev": "bun dev",
+    "lint": "bun lint",
+    "test": "bun test",
+    "build": "bun build",
+    "build:ts": "bun run build.ts"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.8.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/"
+  ],
+  "bun": {
+    "version": "latest"
+  },
+  "author": "Ivan Falcon",
+  "license": "MIT"
+}
