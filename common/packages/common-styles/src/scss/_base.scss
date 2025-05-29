@@ -3,11 +3,23 @@
   font-size: 10px;
   font-weight: 400;
 
-  color: rgba(255, 255, 255, 0.87);
+  color: #282c34;
   background-color: #f7f7f7;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
 }
