@@ -10,6 +10,12 @@ const HeaderWrapper = styled.footer`
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+      max-width: 1344px;
+      width: 100%;
+      padding-right: 16px;
+      padding-left: 16px;
+      margin-right: auto;
+      margin-left: auto;
     }
 
     .item {
@@ -44,7 +50,8 @@ const HeaderWrapper = styled.footer`
       }
 
       .text {
-        font-family: 'Roboto';
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 1.6rem;
       }
     }
   }

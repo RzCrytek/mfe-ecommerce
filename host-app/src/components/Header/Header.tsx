@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { capitalize } from 'common-utils';
 import imageLogo from '../../assets/logo.svg';
 import CartWidget from '../CartWidget/CartWidget';
 import HeaderStyled from './Header.styled';
@@ -15,7 +16,7 @@ const Header: FC = () => {
         <nav className="nav">
           <ul className="menu">
             <li>
-              <NavLink to="/eventos">Eventos</NavLink>
+              <NavLink to="/eventos">{capitalize('eventos')}</NavLink>
             </li>
 
             <li>

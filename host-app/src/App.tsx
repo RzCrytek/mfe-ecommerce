@@ -1,7 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.scss';
-import { capitalize } from 'common-utils';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
@@ -15,9 +14,6 @@ function App() {
     <main id="main">
       <Router>
         <Header />
-        <h1>HOST-APP</h1>
-        <h2>{capitalize('description')}</h2>
-
         <Suspense fallback={<div>Cargando...</div>}>
           <Routes>
             <Route path="/" element={<HomePage />} />
