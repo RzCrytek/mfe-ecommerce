@@ -14,7 +14,7 @@ export default defineConfig({
         remoteExclusiveProducts: 'http://localhost:5003/assets/remoteEntry.js',
         remoteCart: 'http://localhost:5004/assets/remoteEntry.js',
       },
-      shared: ['react', 'react-dom', 'react-router-dom', 'styled-components'],
+      shared: ['react', 'react-dom', 'react-router-dom', 'styled-components', 'common-utils'],
     }),
   ],
   server: {

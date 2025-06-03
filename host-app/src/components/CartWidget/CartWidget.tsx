@@ -2,11 +2,11 @@ import type { FC } from 'react';
 import CartWidgetStyled from './CartWidget.styled';
 import IconCart from './IconCart';
 
-const CartWidget: FC = () => {
+const CartWidget: FC<{ quantity: number }> = ({ quantity }) => {
   return (
     <CartWidgetStyled.ButtonWidget className="added">
       <IconCart />
-      <span className="counter">2</span>
+      <span className="counter">{quantity}</span>
     </CartWidgetStyled.ButtonWidget>
   );
 };
