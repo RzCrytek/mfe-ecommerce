@@ -1,4 +1,5 @@
 import { useState, type FC } from 'react';
+import { eventBus } from 'common-utils';
 import type { ProductCollection } from '../../../../hooks/useGetDocsFilterOnSnapshot';
 import imageNoPhoto from '../../../../assets/no-photo.png';
 import { DetailViewStyled } from './DetailView.styled';
@@ -15,6 +16,7 @@ const DetailView: FC<{ detail: ProductCollection }> = ({ detail }) => {
   const onAdd = () => {
     console.log('agregado');
     console.log('agregado:', quantity);
+    eventBus.next({ type: 'product:quantity', payload: { quantity } });
   };
 
   return (
