@@ -11,7 +11,7 @@ export default defineConfig({
       exposes: {
         './ProductsPage': './src/App.tsx',
       },
-      shared: ['react', 'react-dom', 'styled-components'],
+      shared: ['react', 'react-dom', 'react-router-dom', 'styled-components'],
     }),
   ],
   server: {
