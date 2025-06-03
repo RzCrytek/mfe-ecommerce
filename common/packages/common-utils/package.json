@@ -10,7 +10,9 @@
     "build": "bun run build.ts",
     "dev": "bun x tsc --watch"
   },
-  "dependencies": {},
+  "dependencies": {
+    "rxjs": "^7.8.2"
+  },
   "devDependencies": {
     "@types/bun": "latest",
     "typescript": "^5.8.3"
