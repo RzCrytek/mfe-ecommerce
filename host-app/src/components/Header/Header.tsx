@@ -16,14 +16,14 @@ const Header: FC = () => {
         <nav className="nav">
           <ul className="menu">
             <li>
-              <NavLink to="/eventos">{capitalize('eventos')}</NavLink>
+              <NavLink to="/events">{capitalize('eventos')}</NavLink>
             </li>
 
-            <li>
+            {/* <li>
               <NavLink to="/exclusive-products" className={({ isActive }) => (isActive ? 'active' : undefined)}>
                 exclusivos
               </NavLink>
-            </li>
+            </li> */}
           </ul>
 
           <div className="options">

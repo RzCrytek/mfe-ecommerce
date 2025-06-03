@@ -17,7 +17,7 @@ function App() {
         <Suspense fallback={<div>Cargando...</div>}>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/products/*" element={<ProductsPage />} />
             <Route path="/exclusive-products" element={<ExclusiveProductsPage />} />
             <Route path="/cart" element={<CartPage />} />
           </Routes>
