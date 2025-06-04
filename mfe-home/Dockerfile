@@ -44,8 +44,8 @@ WORKDIR /app
 
 COPY --from=builder /app/dist ./dist
 
-#RUN bun add serve
+RUN bun add serve
 
 EXPOSE 4173
 
-CMD ["bun", "run", "preview"]
+CMD ["bun", "x", "serve", "dist", "-p", "4173"]
