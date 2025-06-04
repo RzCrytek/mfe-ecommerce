@@ -16,12 +16,12 @@ const Header: FC = () => {
 
       if (event.type === 'product:quantity') {
         console.log('product:quantity:', event.payload);
-        setQuantity(event.payload.quantity);
+        setQuantity(quantity + event.payload.quantity);
       }
     });
 
     return () => sub.unsubscribe();
-  }, []);
+  }, [quantity]);
 
   return (
     <HeaderStyled.HeaderWrapper id="header">

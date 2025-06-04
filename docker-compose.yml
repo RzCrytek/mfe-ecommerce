@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  host-app:
+    build:
+      context: .
+      dockerfile: host-app/Dockerfile
+    ports:
+      - "5000:4173"
+    volumes:
+      - ./common/packages:/app/common/packages
+    depends_on:
+      - mfe-home
+      - mfe-products
+
+  mfe-home:
+    build:
+      context: .
+      dockerfile: mfe-home/Dockerfile
+    ports:
+      - "5001:4173"
+    volumes:
+      - ./common/packages:/app/common/packages
+
+  mfe-products:
+    build:
+      context: .
+      dockerfile: mfe-products/Dockerfile
+    ports:
+      - "5002:4173"
+    volumes:
+      - ./common/packages:/app/common/packages

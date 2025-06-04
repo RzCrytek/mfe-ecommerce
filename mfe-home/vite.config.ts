@@ -9,6 +9,7 @@ export default defineConfig({
     react(),
     federation({
       name: 'home',
+      filename: 'remoteEntry.js',
       exposes: {
         './HomePage': './src/App.tsx',
       },
@@ -17,12 +18,12 @@ export default defineConfig({
   ],
   server: {
     port: 5001,
-    host: 'localhost',
+    host: '0.0.0.0',
     strictPort: true,
   },
   preview: {
     port: 5001,
-    host: 'localhost',
+    host: '0.0.0.0',
     strictPort: true,
   },
   build: {
