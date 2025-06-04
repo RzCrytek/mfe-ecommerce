@@ -42,10 +42,18 @@ FROM oven/bun:1
 
 WORKDIR /app
 
+# Copiamos archivos necesarios
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/bun.lock ./
+COPY --from=builder /app/package.json ./
+COPY --from=builder /app/vite.config.ts ./
 
-RUN bun add serve
+# Instalamos vite (si no está incluido en deps de tu package.json)
+RUN bun add -d vite
 
-EXPOSE 4173
+# Instalamos dependencias
+RUN bun install
 
-CMD ["bun", "x", "serve", "dist", "-p", "4173"]
+EXPOSE 5001
+
+CMD ["bun", "run", "preview"]

@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: host-app/Dockerfile
     ports:
-      - "5000:4173"
+      - "5000:5000"
     volumes:
       - ./common/packages:/app/common/packages
     depends_on:
@@ -18,7 +18,7 @@ services:
       context: .
       dockerfile: mfe-home/Dockerfile
     ports:
-      - "5001:4173"
+      - "5001:5001"
     volumes:
       - ./common/packages:/app/common/packages
 
@@ -27,6 +27,8 @@ services:
       context: .
       dockerfile: mfe-products/Dockerfile
     ports:
-      - "5002:4173"
+      - "5002:5002"
     volumes:
       - ./common/packages:/app/common/packages
+    env_file:
+      - ./mfe-products/.env.preview

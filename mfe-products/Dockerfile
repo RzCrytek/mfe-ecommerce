@@ -8,14 +8,10 @@ COPY ./common/packages/common-styles /app/common/packages/common-styles
 COPY ./common/packages/common-utils /app/common/packages/common-utils
 
 # Copiamos archivos de configuración y código fuente
-COPY ./mfe-products/bun.lock ./
-COPY ./mfe-products/package.json ./
-COPY ./mfe-products/tsconfig.json ./
-COPY ./mfe-products/tsconfig.app.json ./
-COPY ./mfe-products/tsconfig.node.json ./
-COPY ./mfe-products/vite.config.ts ./
-COPY ./mfe-products/index.html ./
-COPY ./mfe-products/src ./src
+COPY ./mfe-products/ ./
+
+# Copiar el .env
+COPY ./mfe-products/.env.preview .env
 
 # Registramos los paquetes comunes para linking
 WORKDIR /app/common/packages/common-styles
@@ -42,10 +38,18 @@ FROM oven/bun:1
 
 WORKDIR /app
 
+# Copiamos archivos necesarios
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/bun.lock ./
+COPY --from=builder /app/package.json ./
+COPY --from=builder /app/vite.config.ts ./
 
-RUN bun add serve
+# Instalamos vite (si no está incluido en deps de tu package.json)
+RUN bun add -d vite
 
-EXPOSE 4173
+# Instalamos dependencias
+RUN bun install
 
-CMD ["bun", "x", "serve", "dist", "-p", "4173"]
+EXPOSE 5002
+
+CMD ["bun", "run", "preview"]
