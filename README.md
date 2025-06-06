@@ -42,9 +42,21 @@ Este es un proyecto modular de e-commerce implementado con **Microfrontends**, u
 
 La navegación se maneja desde el `host-app`, que redirige a las aplicaciones remotas correspondientes usando **react-router-dom** y **Module Federation**.
 
+El enrutamiento se maneja desde el `host-app`:
+
+| Ruta        | Descripción                     | MFE cargado    |
+| ----------- | ------------------------------- | -------------- |
+| `/`         | Página de inicio                | `mfe-home`     |
+| `/products` | Listado de productos (Firebase) | `mfe-products` |
+
 ---
 
 ## 🔄 Comunicación entre MFEs
+
+- Se usa **Module Federation** para exponer componentes de los MFEs.
+- Los MFEs comparten lógica y estilos a través de los paquetes `common-utils` y `common-styles`.
+- El `host-app` maneja el enrutamiento y la carga dinámica de cada MFE.
+- Comunicación entre MFEs vía props, contextos compartidos o eventos personalizados (según el caso).
 
 La comunicación y el estado global se maneja a través de:
 
@@ -62,4 +74,24 @@ Cada MFE puede tener un `.env.preview` para variables como claves de Firebase:
 # ejemplo en mfe-products/.env.preview
 VITE_FIREBASE_API_KEY=your_key
 VITE_FIREBASE_PROJECT_ID=your_project_id
+```
+
+Se cargan desde el `docker-compose.yml`:
+
+```yml
+services:
+  mfe-products:
+    env_file:
+      - ./mfe-products/.env.preview
+```
+
+Y en `Vite` se usa así:
+
+```ts
+define: {
+  'process.env': {
+    VITE_FIREBASE_API_KEY: process.env.VITE_FIREBASE_API_KEY,
+    VITE_FIREBASE_PROJECT_ID: process.env.VITE_FIREBASE_PROJECT_ID,
+  },
+}
 ```
