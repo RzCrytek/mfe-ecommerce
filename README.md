@@ -4,6 +4,10 @@ Este es un proyecto modular de e-commerce implementado con **Microfrontends**, u
 
 ---
 
+### 🧩 Arquitectura general
+
+![Diagrama de arquitectura](./microfrontend.png)
+
 ## 📁 Estructura del Proyecto
 
 <pre>
